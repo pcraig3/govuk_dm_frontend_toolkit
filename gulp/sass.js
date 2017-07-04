@@ -17,7 +17,9 @@ gulp.task('sass', function () {
   .pipe(sass({outputStyle: 'expanded',
     includePaths: ['govuk_modules/govuk_frontend_toolkit/stylesheets',
       'govuk_modules/govuk_template/assets/stylesheets',
-      'govuk_modules/govuk-elements-sass/']}).on('error', sass.logError))
+      'govuk_modules/govuk-elements-sass/',
+      'node_modules/digitalmarketplace-frontend-toolkit/toolkit/scss'
+      ]}).on('error', sass.logError))
   .pipe(sourcemaps.write())
   .pipe(gulp.dest(config.paths.public + '/stylesheets/'))
 })
